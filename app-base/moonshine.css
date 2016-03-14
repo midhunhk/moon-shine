@@ -1,0 +1,98 @@
+/**
+ * moonshine.css
+ * styles for the application 
+ * 
+ *#90be4e; bg color #4db6ac, #009688; text color #eeff41, 
+ */
+html {
+	height: 100%;
+}
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	height: 100%;
+	margin: 0;
+	padding: 1pt;
+	font-family: helvetica, san-serif;
+}
+.node {
+	-webkit-border-radius: 48px;
+	-moz-border-radius: 48px;
+	border-radius: 48px;
+	/* background: #067195;
+	background: #0099cc; */
+	background: #4db6ac;
+	border: 2px solid #FFF;
+	box-shadow: 0 0 5px #888;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	-webkit-backface-visibility: hidden;
+}
+.node h4 {
+	color: #ffffff;
+	/*color: #067195;
+		text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+	*/
+  
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 60px;
+	left: 25px;
+	text-align:center;
+	bottom: 15px;
+	font-size: 12px;
+}
+.node.animate {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.node:hover {
+	cursor: pointer;
+}
+.node.dragging {
+	z-index: 99;
+}
+.segment {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*background: #ABF29F;
+	background: #cc9900;*/
+	background: #90be4e;
+	z-index: 1;
+	-webkit-transform-origin: 0 100%;
+	-moz-transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+	border: 1px solid white;
+	border-right: 0;
+	-webkit-backface-visibility: hidden;
+}
+.segment .endpoint {
+	position: absolute;
+	top: -9px;
+}
+
+.segmentimport {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*background: #49D6E3;*/
+	background: #90be4e;
+	z-index: 1;
+	-webkit-transform-origin: 0 100%;
+	-moz-transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+	border: 1px solid white;
+	border-right: 0;
+	-webkit-backface-visibility: hidden;
+}
+.segmentimport .endpoint {
+	position: absolute;
+	top: -9px;
+}

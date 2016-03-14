@@ -1,0 +1,6 @@
+codename moonshine
+
+Version 0.3.3
+[October 2014]
+
+based on work by Matt King https://github.com/boundary/html5-node-diagram

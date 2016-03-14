@@ -1,0 +1,51 @@
+/**
+  *
+  *
+  **/
+  
+
+#panel{
+	z-index: 99;
+	float:right;
+	/*background: #eaeaea;
+	opacity: 0.5;
+	box-shadow: 0 0 5px #aaa;
+	 width:100px; */
+	padding:10px;
+	margin:10px;
+}
+#code-preview{
+	z-index: 99;
+	position: absolute;
+	background: #f2f2f2;
+	opacity:0.8;
+	box-shadow: 0 0 5px #aaa;
+	top:60px;
+	right: 10px;
+	width:320px;
+	padding:10px;
+	font-family:Monospace;
+}
+/* yellow eeff41*/
+#panel a:hover{ background-color:#4db6ac;}
+
+.small-text{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 0.8em;
+}
+.button {
+    border: medium none;
+    border-radius: 2px;
+    color: #FFF !important;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 7px 15px;
+	text-decoration:none;
+}
+.button.blue {
+    background-color: #26C6DA;
+    color: #FFF;
+}
+.uppercase {
+    text-transform: uppercase;
+}
