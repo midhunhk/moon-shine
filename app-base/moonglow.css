@@ -1,8 +1,9 @@
 /**
+  * moonglow.css
   *
+  * This adds extensive styles to the base application for additional features.
   *
   **/
-  
 
 #panel{
 	z-index: 99;
@@ -25,6 +26,11 @@
 	width:320px;
 	padding:10px;
 	font-family:Monospace;
+	-moz-user-select: text;
+	-khtml-user-select: text;
+	-webkit-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
 }
 /* yellow eeff41*/
 #panel a:hover{ background-color:#4db6ac;}
