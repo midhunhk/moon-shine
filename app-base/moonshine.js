@@ -1,6 +1,6 @@
 /**
  * 	Moonshine
- *	A multi node graph implementation in HTML5
+ *	A multi node graph implementation using HTML5 Canvas
  * 
  * 	based on https://github.com/boundary/html5-node-diagram
  * 	Colors: http://www.colorhexa.com/0099cc
@@ -21,7 +21,11 @@ var ENABLE_EDIT_TITLE_ON_CLICK = true;
 	function initialize() {
 		$("#stage").hide().delay(100).fadeIn(300);
 		stage = $('#stage');
+		
+		// Create the nodes
 		createNodes();
+		
+		// Create links between nodes
 		createLinks();
 	}
 	initialize();
@@ -66,6 +70,7 @@ function createNode(nodeTitle, nodeId, nodeX, nodeY){
 					
 					// allow the title to be modified if enabled
 					if(ENABLE_EDIT_TITLE_ON_CLICK){
+						$node.css('border-color', '#ec461c');
 						$node.bind("keypress", function(e){
 							$thisNode = $(this);
 							
@@ -91,7 +96,9 @@ function createNode(nodeTitle, nodeId, nodeX, nodeY){
 					}
 					
 					if(ENABLE_EDIT_TITLE_ON_CLICK){
-						// Stop edit when clicked again
+						// Reset the node highlight signifying edit
+						$node.css('border-color', '#ffffff');
+						// Stop edit when the node is clicked again
 						$node.unbind("keypress");
 						$node.data( 'editStarted', 'false');
 					}
@@ -101,14 +108,16 @@ function createNode(nodeTitle, nodeId, nodeX, nodeY){
 	}).attach();
 }
 
-
+/**
+ * Utility method that creates and attaches a segment between two nodes
+ */
 function createAndAttachSegment(originNode, destinationNode){
 	var segmentId = "includesegment-" + originNode.id + "-" + destinationNode.id;
 	new Segment({h: 5, id:segmentId, stage: stage, origin: originNode, destination: destinationNode}).attach();
 }
 
 /**
- * Cretes the links
+ * Cretes the links between the nodes
  */
 function createLinks() {
 	/* Segment is a red line with an arrow head*/
@@ -132,7 +141,8 @@ function createLinks() {
 
 /**
  * Creates all the nodes. All created nodes are public. 
- * Generated code can be placed in this method.
+ * Generated code can be placed in this method and the links should be added in
+ * the createLinks() method
  */
 function createNodes() {
 	node0 = createNode("boston", "node00", 658,348);
@@ -147,4 +157,3 @@ function createNodes() {
 	node9 = createNode("washington", "node09", 257,249);
 	node10 = createNode("seattle", "node10", 625,250);
 }
-
