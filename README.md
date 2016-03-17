@@ -9,6 +9,8 @@ Edit the `data.js` file in the app directory and add your data in the below meth
 
 Basically you create nodes and links between nodes however which way you want. This can be used to create complete tree like structures. See the above example image.
 
+You can set an arbitrary `x` and `y` when you create the nodes, then drag them to the correct position. Once you are good with the positions you can generate the code with corresponding positions and update the `data.js`.
+
 ```
   function createNodes() {
 	  // create node format {title, id, x, y}
