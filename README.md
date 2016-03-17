@@ -7,6 +7,8 @@ A Multi segment node implementation using HTML5 Canvas codenamed moon-shine.
 # configuration
 Edit the `data.js` file in the app directory and add your data in the below methods, then run index.html to see the changes.
 
+Basically you create nodes and links between nodes however which way you want. This can be used to create complete tree like structures. See the above example image.
+
 ```
   function createNodes() {
 	  // create node format {title, id, x, y}
