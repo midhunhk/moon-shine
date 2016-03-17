@@ -16,9 +16,13 @@ var stage,
 	Segment = window.Segment;
 
 var ENABLE_EDIT_TITLE_ON_CLICK = true;
-	
+
+/**
+ * Initialize and run the application
+ */
 (function($, window) {
 	function initialize() {
+		// Do some animation to the stage onload
 		$("#stage").hide().delay(100).fadeIn(300);
 		stage = $('#stage');
 		
@@ -114,46 +118,4 @@ function createNode(nodeTitle, nodeId, nodeX, nodeY){
 function createAndAttachSegment(originNode, destinationNode){
 	var segmentId = "includesegment-" + originNode.id + "-" + destinationNode.id;
 	new Segment({h: 5, id:segmentId, stage: stage, origin: originNode, destination: destinationNode}).attach();
-}
-
-/**
- * Cretes the links between the nodes
- */
-function createLinks() {
-	/* Segment is a red line with an arrow head*/
-	/*
-	new Segment({id: 'includesegment4-0',h: 5,stage: stage,origin: node0,destination: node1}).attach();
-	new Segment({id: 'includesegment4-1',h: 5,stage: stage,origin: node5,destination: node4}).attach();
-	new Segment({id: 'includesegment4-2',h: 5,stage: stage,origin: node6,destination: node4}).attach();
-	*/
-	
-	/* SegmentImport is an orange line with an arrowhead*/
-	createAndAttachSegment(node0, node1)
-	createAndAttachSegment(node4, node2)
-	createAndAttachSegment(node5, node3)
-	createAndAttachSegment(node1, node7)
-	createAndAttachSegment(node0, node7)
-	createAndAttachSegment(node3, node2)
-	createAndAttachSegment(node8, node2)
-	createAndAttachSegment(node9, node2)
-	
-}
-
-/**
- * Creates all the nodes. All created nodes are public. 
- * Generated code can be placed in this method and the links should be added in
- * the createLinks() method
- */
-function createNodes() {
-	node0 = createNode("boston", "node00", 658,348);
-	node1 = createNode("nevada", "node01", 380,519);
-	node2 = createNode("fort worth", "node02", 509,14);
-	node3 = createNode("san jose", "node03", 508,174);
-	node4 = createNode("new york", "node04", 809,127);
-	node5 = createNode("dallas", "node05", 978,175);
-	node6 = createNode("chicago", "node06", 800,250);
-	node7 = createNode("cincinatti", "node07", 100,350);
-	node8 = createNode("florida", "node08", 867,19);
-	node9 = createNode("washington", "node09", 257,249);
-	node10 = createNode("seattle", "node10", 625,250);
 }
