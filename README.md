@@ -1,5 +1,5 @@
 # moon-shine
-A Multi node graph implementation using HTML5 Canvas codenamed moon-shine.
+A Multi segment node implementation using HTML5 Canvas codenamed moon-shine.
 
 # example
 <img alt="Places as Nodes" src="https://raw.githubusercontent.com/midhunhk/moon-shine/master/documentation/places-sample.png" />
@@ -23,7 +23,8 @@ Edit the `data.js` file in the app directory and add your data in the below meth
 ```
 
 # note
-This app is based on work by Matt King's(https://github.com/mattking17) html5-node-diagram, which has been heavily edited for my need. I was looking for a Multi node graph implementation, but could find only single nodes. This project met my needs and I have edited the original files heavily in private, hence did not fork the below repo.
+This app is based on work by Matt King's(https://github.com/mattking17) html5-node-diagram repo, which has been heavily edited for my need. I was looking for a Multi node graph implementation, but could find only implementations with single segments between nodes. 
+This project met my needs and I modified the files from that repo in private a few years ago. Since the modifications were large and I was not sure if my modifications would result in a reusable project, I did not fork the below repo.
 
 https://github.com/boundary/html5-node-diagram
 
