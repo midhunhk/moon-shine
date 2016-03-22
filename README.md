@@ -5,25 +5,28 @@ A Multi segment node implementation using HTML5 Canvas codenamed moon-shine.
 <img alt="Places as Nodes" src="https://raw.githubusercontent.com/midhunhk/moon-shine/master/documentation/places-sample.png" />
 
 # configuration
-Edit the `data.js` file in the app directory and add your data in the below methods, then run index.html to see the changes.
+Edit the `data.js` file in the app directory to add the data that ypu have, then run index.html to see the changes.
 
 Basically you create nodes and links between nodes however which way you want. This can be used to create complete tree like structures. See the above example image.
 
-You can set an arbitrary `x` and `y` when you create the nodes, then drag them to the correct position. Once you are good with the positions you can generate the code with corresponding positions and update the `data.js`.
+You can set an arbitrary `x` and `y` when you create the nodes, then drag them to the correct position. Once you have nodes in the expected positions, you can generate the code with corresponding positions and update the `data.js` with the positions.
 
+`data.js`
 ```
-  function createNodes() {
-	  // create node format {title, id, x, y}
-	  node0 = createNode("Boston", "node00", 658,348);
-	  node1 = createNode("Nevada", "node01", 380,519);
-	  node2 = createNode("Fort Worth", "node02", 509,14);
-	}
-	
-	function createLinks() {
-	  // Create a link from node0 to node1
-	  createAndAttachSegment(node0, node1)
-	  createAndAttachSegment(node0, node2)
-	}
+graphDatas = [
+    {
+        text: "Boston", _id: "node00", xPos: 658, yPos: 348,
+        links:[ {"_id": "node01"}, {"_id": "node07"} ]
+    },
+    {
+        text: "Nevada", _id: "node01", xPos: 380, yPos: 519,
+        links:[ {"_id": "node07"} ]
+    },
+    {
+        text: "Fort Worth", _id: "node02", xPos: 509, yPos: 14,
+        links:[ ]
+    }
+];
 ```
 
 # note
