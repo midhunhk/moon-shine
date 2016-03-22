@@ -1,28 +1,42 @@
 /** codegen.js - experimental code generation
-  * Midhun Harikumar
-  *
-  *
-  **/
+ *
+ * Midhun Harikumar
+ *
+ **/
 
-  // Initialzations on page load
+// Initialzations on page load
 $(document).ready(function () {
     $("#code-preview").hide();
 
     $("#btnCode").click(function () {
-        // Do some code generation	
+        // Let's generate some code!!!
 
-        var completeCode = "";
+        var completeCode = "[ ";
+        var nodesLength = $('.node').length;
         $('.node').each(function (index, obj) {
             $obj = $(obj);
-            var code = "node" + index + " = createNode(\"";
-            code = code + $obj.children().first().text() + "\", \"";
-            code = code + obj.id + "\", ";
-            code = code + $obj.position().left + ",";
-            code = code + $obj.position().top + ");";
+            
+            var code = "    {";
+                code = code + "text: \"" + $obj.children().first().text() + "\", \"";
+                code = code + "_id:  \"" + $obj.id + "\", ";
+                code = code + "xPos: \"" + $obj.position().left + ",";
+                code = code + "yPos: \"" + $obj.position().top + ");";
+            
+                // TODO: Generate code for links
+                code = code + "links: \"[]\"";
 
             // Add this element's code with a break-rule to the entire code
-            completeCode += code + "<br/>";
+            if(nodesLength == index + 1){
+                // Last node doesn't need the comma
+                completeCode += code + "    }<br/>";
+            } else {
+                completeCode += code + "    },<br/>";
+            }
         });
+        
+        console.log(completeCode.lastIndexOf(","));
+        
+        completeCode += "]";
 
         $("#code-preview").html(completeCode);
 
