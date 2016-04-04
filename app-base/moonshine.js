@@ -107,6 +107,7 @@ function createNode(nodeTitle, nodeId, nodeX, nodeY){
 					}
 				} else {
 					// Do stuff for non selected state
+					highlightedNode = undefined;
 					$node.data( 'nodeSelected', 'notselected' );
 					
 					var includesegments = this.segments; 
