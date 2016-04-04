@@ -9,7 +9,8 @@
 var CONFIG = {
     width: 120,
     height: 50,
-    enableEditTitleOnClick: false
+    enableEditTitleOnClick: false,
+    enableAddNodeButton: false
 };
 
 // internal varaibles
