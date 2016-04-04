@@ -67,4 +67,29 @@ $(document).ready(function () {
 
         $("#code-preview").html(completeCode).slideToggle()
     });
+    
+    // Code to add a new node on the fly
+    var newNodeIndex = 0;
+    if(CONFIG.enableAddNodeButton){
+        $("#btnAddNode").show();
+        $("#btnAddNode").click( function(){
+            
+            var nodeId = "newNode" + newNodeIndex;
+            newNodeIndex++;
+            
+            // Create the new node and add it to the nodes list
+            var position = 150 + (20 * newNodeIndex);
+            var newNode = createNode("Untitled", nodeId, position, position);
+            nodes[nodeId] = newNode;
+            
+            // Add a link to the highlightedNode if one is selected
+            if(undefined != highlightedNode){
+                var destinationNode = nodes[highlightedNode.attr("id")];
+                createAndAttachSegment(newNode, destinationNode);
+            }
+        });
+    } else {
+        $("#btnAddNode").hide();
+    }
+    
 });
