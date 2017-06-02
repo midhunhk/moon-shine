@@ -3,7 +3,7 @@
  * 	The data for displaying the graph are defined in this file
  **/
 
-graphDatas = [
+graphData = [
     {
         text: "Boston", _id: "node00", xPos: 658, yPos: 348,
         links:[ {"_id": "node01"}, {"_id": "node07"} ]
