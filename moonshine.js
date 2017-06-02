@@ -5,7 +5,7 @@
  * based on https://github.com/boundary/html5-node-diagram
  **/
 
-// Configurations
+// Configurations including dimentions of each node
 var CONFIG = {
     width: 120,
     height: 50,
@@ -137,15 +137,7 @@ $(document).on("keydown", function (e) {
 });
 
 /**
- * Create and attach a segment between two given nodes
- */
-function createAndAttachSegment(originNode, destinationNode){
-	var segmentId = "includesegment-" + originNode.id + "-" + destinationNode.id;
-	new Segment({h: 5, id:segmentId, stage: stage, origin: originNode, destination: destinationNode}).attach();
-}
-
-/**
- * Creates all the nodes. All created nodes are public. 
+ * Creates all nodes. All created nodes are available as global variables
  * Generated code can be placed in this method and the links should be added in
  * the createLinks() method
  */
@@ -171,14 +163,22 @@ function createNodes() {
 }
 
 /**
- * Cretes the links between the nodes
+ * Creates links between nodes
  */
 function createLinks() {
-    // Now all the nodes should be available for creating the links
+    // All the nodes should be available for creating links
     $(links).each( function(){
         var source = nodes[$(this)[0].source];
         var target = nodes[$(this)[0].target];
         
         createAndAttachSegment(source, target);
     });
+}
+
+/**
+ * Create and attach a segment between two given nodes
+ */
+function createAndAttachSegment(originNode, destinationNode){
+	var segmentId = "includesegment-" + originNode.id + "-" + destinationNode.id;
+	new Segment({h: 5, id:segmentId, stage: stage, origin: originNode, destination: destinationNode}).attach();
 }
