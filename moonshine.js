@@ -157,7 +157,7 @@ function createNodes() {
     links = [];
     
     // Iterate over the datas defined in data.js
-    $(graphDatas).each( function(){
+    $(graphData).each( function(){
         $data = $(this)[0];
         
         // create a node from the data and add it to the dictionary
